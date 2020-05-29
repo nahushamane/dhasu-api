@@ -24,4 +24,4 @@ def getresults():
     #print (string)
     return string
 
-#app.run(port=5100, debug=True)
+app.run(host='0.0.0.0', debug=True)
