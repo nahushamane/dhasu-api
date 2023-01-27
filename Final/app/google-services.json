@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "575930186715",
+    "firebase_url": "https://dhasu-e6597.firebaseio.com",
+    "project_id": "dhasu-e6597",
+    "storage_bucket": "dhasu-e6597.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575930186715:android:a4ed894ef2b3ac957885fe",
+        "android_client_info": {
+          "package_name": "com.example.dhasu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575930186715-aob9ckgpsddo1p7e7g87pg4c2dubrs45.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dhasu",
+            "certificate_hash": "a858bf463eefa5a731735fa1279b0b04e85e28f8"
+          }
+        },
+        {
+          "client_id": "575930186715-a1d3rjvrg061f8b7esis2ssnvcjen7ej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwz6XCiGmWcXglJepUzZWTykDpq3ADlTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575930186715-a1d3rjvrg061f8b7esis2ssnvcjen7ej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
