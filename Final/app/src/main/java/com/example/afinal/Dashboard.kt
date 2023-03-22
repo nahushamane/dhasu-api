@@ -13,17 +13,22 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    private var drawer: DrawerLayout? = null
-    private val mAuth = FirebaseAuth.getInstance()
-    private val database = FirebaseDatabase.getInstance()
+
+    private lateinit var drawer: DrawerLayout
+    private var mAuth = FirebaseAuth.getInstance()
+    private var database = FirebaseDatabase.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         drawer = findViewById(R.id.drawer_layout)
+
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
+
         val toggle = ActionBarDrawerToggle(
             this,
             drawer,

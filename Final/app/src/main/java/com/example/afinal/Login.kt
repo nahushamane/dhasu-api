@@ -12,20 +12,24 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 
 class Login : AppCompatActivity() {
-    var mEmail: EditText? = null
-    var mPassword: EditText? = null
-    var ButtonSignIn: Button? = null
-    var Signup: TextView? = null
-    private var mAuth: FirebaseAuth? = null
-    private var mAuthStateListner: AuthStateListener? = null
+
+    private lateinit var mEmail: EditText
+    private lateinit var mPassword: EditText
+    private lateinit var ButtonSignIn: Button
+    private lateinit var Signup: TextView
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var mAuthStateListner: AuthStateListener
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         mAuth = FirebaseAuth.getInstance()
         mEmail = findViewById(R.id.username)
         mPassword = findViewById(R.id.password)
         ButtonSignIn = findViewById(R.id.button_signin_login)
         Signup = findViewById(R.id.textView_signup)
+
         mAuthStateListner = AuthStateListener {
             val mFirebaseUser = mAuth!!.currentUser
             if (mFirebaseUser != null) {
@@ -36,6 +40,7 @@ class Login : AppCompatActivity() {
                 return@AuthStateListener
             }
         }
+
         ButtonSignIn.setOnClickListener(View.OnClickListener {
             val email = mEmail.getText().toString()
             val password = mPassword.getText().toString()
@@ -50,6 +55,7 @@ class Login : AppCompatActivity() {
                     }
                 }
         })
+
         Signup.setOnClickListener(View.OnClickListener {
             val i = Intent(this@Login, Signup_E_P::class.java)
             startActivity(i)

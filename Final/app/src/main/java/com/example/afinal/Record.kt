@@ -17,12 +17,14 @@ import java.io.File
 import java.io.IOException
 
 class Record : Fragment() {
-    private var ButtonRecord: Button? = null
-    private var TVRecord: TextView? = null
-    private var recorder: MediaRecorder? = null
-    private var fileName: String? = null
+
+    private lateinit var ButtonRecord: Button
+    private lateinit var TVRecord: TextView
+    private lateinit var recorder: MediaRecorder
+    private lateinit var fileName: String
     private var ClickCount = 0
-    private var Storage: StorageReference? = null
+    private lateinit var Storage: StorageReference
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -65,7 +67,7 @@ class Record : Fragment() {
     private fun stopRecording() {
         recorder!!.stop()
         recorder!!.release()
-        recorder = null
+        //recorder = null
         uploadAudio()
         TVRecord!!.text = "Uploading Audio..."
     }
