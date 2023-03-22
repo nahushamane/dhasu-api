@@ -57,7 +57,7 @@ class Login : AppCompatActivity() {
         })
 
         Signup.setOnClickListener(View.OnClickListener {
-            val i = Intent(this@Login, Signup_E_P::class.java)
+            val i = Intent(this@Login, Signup::class.java)
             startActivity(i)
             finish()
             return@OnClickListener

@@ -8,22 +8,26 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.identity.BeginSignInRequest
+import com.google.android.gms.auth.api.identity.Identity
+import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 
-class Signup_E_P : AppCompatActivity() {
+class Signup : AppCompatActivity() {
 
     private lateinit var Email: EditText
     private lateinit var Password: EditText
     private lateinit var ConfirmPassword: EditText
     private lateinit var ButtonNext: Button
     private lateinit var Login: TextView
+
     private lateinit var mFirebaseAuth: FirebaseAuth
     private lateinit var firebaseAuthStateListner: AuthStateListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup_e_p)
+        setContentView(R.layout.activity_signup)
 
         mFirebaseAuth = FirebaseAuth.getInstance()
         Email = findViewById(R.id.editText4)
@@ -47,21 +51,21 @@ class Signup_E_P : AppCompatActivity() {
                 ConfirmPassword.requestFocus()
             } else if (!(email.isEmpty() && pwd.isEmpty())) {
                 mFirebaseAuth!!.createUserWithEmailAndPassword(email, pwd)
-                    .addOnCompleteListener(this@Signup_E_P) { task ->
+                    .addOnCompleteListener(this@Signup) { task ->
                         if (!task.isSuccessful) {
-                            Toast.makeText(this@Signup_E_P, "Signup Failed!", Toast.LENGTH_SHORT)
+                            Toast.makeText(this@Signup, "Signup Failed!", Toast.LENGTH_SHORT)
                                 .show()
                         } else {
-                            startActivity(Intent(this@Signup_E_P, Dashboard::class.java))
+                            startActivity(Intent(this@Signup, Dashboard::class.java))
                         }
                     }
             } else {
-                Toast.makeText(this@Signup_E_P, "Check Again!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Signup, "Check Again!", Toast.LENGTH_SHORT).show()
             }
         })
 
         Login.setOnClickListener(View.OnClickListener {
-            val i = Intent(this@Signup_E_P, Login::class.java)
+            val i = Intent(this@Signup, Login::class.java)
             startActivity(i)
             finish()
             return@OnClickListener

@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Signup_E_P" />
+        <activity android:name=".Signup" />
 
         <activity android:name=".Dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
